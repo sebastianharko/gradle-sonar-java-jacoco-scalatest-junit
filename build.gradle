@@ -1,0 +1,47 @@
+apply plugin: "idea"
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: 'application'
+apply plugin: 'jacoco'
+apply plugin: "sonar-runner"
+apply plugin: 'scala'
+
+
+
+repositories {
+	jcenter()
+	mavenCentral()
+}
+
+
+dependencies {
+
+    runtime "org.scala-lang:scala-compiler:2.10.3+"
+    compile "org.scala-lang:scala-library:2.10.3+"
+
+    testCompile "junit:junit:4.11+"
+	testCompile "org.scalatest:scalatest_2.10:2.0+"
+}
+
+mainClassName = "com.example.integration.Main"
+version = "1.0.0.42"
+description = "Trying to integrate gradle, sonar and jacoco"
+
+
+sonarRunner {
+    sonarProperties {
+
+        property "sonar.projectName", "example-gradle-sonar-jacoco"
+        property "sonar.host.url", "http://${rootProject.properties['sonarHostName']}:9000"
+        property "sonar.login", "${rootProject.properties['sonarWebUserName']}"
+        property "sonar.password", "${rootProject.properties['sonarWebPassword']}"
+
+        property "sonar.jdbc.url", "jdbc:mysql://${rootProject.properties['sonarHostName']}:3306/sonar?useUnicode=true&characterEncoding=utf8"
+        property "sonar.jdbc.driverClassName", "com.mysql.jdbc.Driver"
+        property "sonar.jdbc.username", "${rootProject.properties['sonarDbUserName']}"
+        property "sonar.jdbc.password", "${rootProject.properties['sonarDbPassword']}"
+
+        property "sonar.jacoco.reportPath", "$buildDir/jacoco/test.exec"
+
+    }
+}

@@ -1,4 +1,4 @@
-gradle-sonar-jacoco-scala
-=========================
+README
+======
 
-gradle-sonar-jacoco-scala
+Trying to get gradle, sonar and jacoco to live in harmony.
