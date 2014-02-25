@@ -1,4 +1,4 @@
 README
 ======
 
-Trying to get gradle, sonar and jacoco to live in harmony.
+Trying to get gradle, sonar, jacoco, java, scala, scalatest and junit to live in harmony.
