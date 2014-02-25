@@ -42,6 +42,7 @@ sonarRunner {
         property "sonar.jdbc.password", "${rootProject.properties['sonarDbPassword']}"
 
         property "sonar.jacoco.reportPath", "$buildDir/jacoco/test.exec"
+        property "sonar.junit.reportsPath", "$buildDir/test-results/"
 
     }
 }
