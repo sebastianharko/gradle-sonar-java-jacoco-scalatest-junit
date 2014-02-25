@@ -20,7 +20,7 @@ dependencies {
     compile "org.scala-lang:scala-library:2.10.3+"
 
     testCompile "junit:junit:4.11+"
-	testCompile "org.scalatest:scalatest_2.10:2.0+"
+    testCompile "org.scalatest:scalatest_2.10:2.0+"
 }
 
 mainClassName = "com.example.integration.Main"
