@@ -31,7 +31,7 @@ description = "Trying to integrate gradle, sonar and jacoco"
 sonarRunner {
     sonarProperties {
 
-        property "sonar.projectName", "example-gradle-sonar-jacoco"
+        property "sonar.projectName", "gradle-sonar-java-jacoco-scalatest-junit "
         property "sonar.host.url", "http://${rootProject.properties['sonarHostName']}:9000"
         property "sonar.login", "${rootProject.properties['sonarWebUserName']}"
         property "sonar.password", "${rootProject.properties['sonarWebPassword']}"
