@@ -7,7 +7,7 @@ import org.junit.runner.RunWith
 @RunWith(classOf[JUnitRunner])
 class TestPrimeNumber extends FunSuite {
 
-  test("isPrime should throw an Exception") {
+  test("isPrime should throw an Exception for 'big' numbers") {
     intercept[Exception] {
       PrimeNumberHelper.isPrime(2048);
     }
@@ -17,7 +17,7 @@ class TestPrimeNumber extends FunSuite {
     assert(PrimeNumberHelper.isPrime(7) == true)
   }
 
-  test("4 is not a prime number") {
+  test("4 should be reported as non-prime number") {
     assert(PrimeNumberHelper.isPrime(4) == false)
   }
 
